@@ -107,7 +107,7 @@ function back_img(code) {
 
 
 function getlocation() {
-    window.navigator.geolocation.getCurrentPosition(showPosition, showError);
+    window.navigator.geolocation.getCurrentPosition(showPosition, showError,enableHighAccuracy);
 }
 
 
