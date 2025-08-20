@@ -160,7 +160,7 @@ async function weather(Lat, long) {
         const city = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${Lat}&lon=${long}&format=json`)
         const city_data = await city.json()
         console.log(city_data); 
-        loc.textContent = city_data.display_name;
+        loc.textContent = city_data.address.city || city_data.display_name;
 
         change_content(data);
     } catch (error) {
