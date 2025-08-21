@@ -11,7 +11,7 @@ const wind = document.getElementById("wind")
 const icon = document.getElementById("icon")
 
 const body = document.querySelector("body")
-
+let cityy=""
 async function location_to_cord(location) {
 
     try {
@@ -160,8 +160,10 @@ async function weather(Lat, long) {
         const city = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${Lat}&lon=${long}&format=json`)
         const city_data = await city.json()
         console.log(city_data); 
-        loc.textContent = city_data.address.city || city_data.display_name;
-
+        //loc.textContent = city_data.address.city || city_data.display_name;
+        loc.textContent = (city_data.address.city && city_data.address.city.includes(cityy))
+            ? city_data.address.city
+            : city_data.display_name;
         change_content(data);
     } catch (error) {
         console.log(error);
@@ -282,7 +284,7 @@ search.addEventListener("click", (e) => {
 
 
     if (city !== '') {
-
+        cityy=city
         location_to_cord(city);
         // loc.textContent = city;
 
