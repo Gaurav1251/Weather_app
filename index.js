@@ -53,6 +53,7 @@ function mapWeatherCode(code) {
         65: "Heavy rain",
         80: "Rain showers",
         95: "Thunderstorm"
+        96: "Thuderstorm"
     };
     return map[code] || "Unknown";
 }
@@ -60,7 +61,7 @@ function mapWeatherCode_img(code) {
     const map = {
 
         95: "strom_icon.png",
-
+        96: "strom_icon.png",
 
         61: "rain_icon.png",
         63: "rain_icon.png",
@@ -84,6 +85,7 @@ function back_img(code) {
     const map = {
 
         95: "strom.jpg",
+        96: "strom.jpg",
 
 
         61: "rain.jpeg",
